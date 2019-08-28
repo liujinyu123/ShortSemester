@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <hibernate-mapping>
+    <class name="Bean.Rule"  table="t_rule">
+    <id name="id" column="id">
+    
+    <!-- 
+    /xiaoxueqi/src/.java
+    generator 取值的种类：
+     increment：数据库自己生成主键，先从数据库中查询最大的id值，将id值+1作为新的主键
+     identity : 依赖于数据库的主键自增功能
+     sequence ： 序列，依赖于数据库中的序列功能（只在Oracle中使用）
+     native ：自动根据数据库判断，三选一  increator
+     uuid : 生成32为的不重复的string方法
+     assigned : 自己指定主键值。当表的主键是自然主键时
+     -->
+     <generator class="native"> </generator>
+    </id>
+   
+    <property name="t_id" column="t_id"></property>
+    
+    <property name="rule" column="rule"></property>
+    
+    
+    </class>
+    </hibernate-mapping>
