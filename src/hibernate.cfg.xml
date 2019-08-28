@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+	<session-factory >
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		<property name="hibernate.connection.username">System</property>
+		<property name="hibernate.connection.password">Ljy199782</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@127.0.0.1:1521:xiaoxueqi</property>
+		
+		<!-- 操作数据库时，会向控制台打印sql语句 -->
+		<property name="show_sql">true</property>
+		<!-- 在打印sql语句之前，首先对其进行转化，转化成程序员可以看懂的sql语句 -->
+		<property name="format_sql">true</property>
+		<!--是否自动生成表结构
+	    update : 最常用的取值，当前数据库中，不存在表结构，自动创建表结构，如果存在表结构并且表结构与实体
+	    一致，那么不做修改，如果表机构不一致，那么会修改表结构，会保留原有字段
+		create : 无论是否存在表结构，每次启动hibernate都会重新创建表结构（数据会丢失）
+		create-drop : 无论是否存在表结构，每次启动hibernate都会重新创建表结构（数据会丢失），每次关闭时
+		都会自动删除表结构
+		validate : 不会自动创建表结构，不会自动维护表结构，只会验证表结构，如果表结构不一致，将会
+		抛出异常
+		
+		 -->
+		<property name="hbm2ddl.auto">update</property>
+		
+		<!-- 
+		//选择最短的
+		org.hibernate.dialect.MySQLDialect
+		org.hibernate.dialect.MySQLInnoDBDialect
+		org.hibernate.dialect.MySQLMyISAMDialect
+
+		 -->
+		 <!-- 数据库方言的配置 -->
+		 <property name="hibernate.dialect">org.hibernate.dialect.OracleDialect</property>
+		<!-- 事务自动提交 -->
+		<property name="hibernate.connection.autocommit">true</property>
+		<mapping resource="User.hbm.xml"/>
+	    <mapping resource="JB.hbm.xml"/>
+	    <mapping resource="Shenqing.hbm.xml"/>
+	     <mapping resource="Rule.hbm.xml"/>
+	</session-factory>
+</hibernate-configuration>
