@@ -1,0 +1,50 @@
+
+创建用户表
+create table t_user(       
+id number(10) not null primary key,       
+username varchar(16) not null,        
+password number(10) not null,        
+type number(10) not null,        
+
+);
+
+
+
+创建基本信息表
+create table t_jb(       
+id number(10) not null primary key,       
+u_id number(10) not null,        
+sex varchar(11) default null,        
+age number(11) default 0,        
+school varchar(128) default null ,
+major varchar(128) default null,
+direction varchar(20) dafault null,
+birth varchar(20) default null,
+QQ varchar(20) default null,
+phone varchar(20) default null,
+job varchar(20) default null,
+description varchar(20) default null 
+);
+
+
+
+创建申请表
+create table t_shenqing(       
+id number(10) not null primary key,       
+s_id number(10) not null ,  
+t_id number(10) not null,  
+reason varchar(20) default null,
+introduction varchar(20) default null,
+result varchar(20) default null,
+reply varchar(20) default null,
+status varchar(20) default null,
+replystatus varchar(20) default null
+);
+
+
+创建规则表
+create table t_rule(       
+id number(10) not null primary key,       
+s_id number(10) not null,        
+rule varchar(10) not null,   
+);
